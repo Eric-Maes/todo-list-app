@@ -33,4 +33,12 @@ export class TodoListComponent implements OnInit {
     ];
   }
 
+  // Ajout d'une tâche
+  addTask() {
+    this.tasks.push({
+      title: this.addTask,
+      done: false
+    });
+  }
+
 }
