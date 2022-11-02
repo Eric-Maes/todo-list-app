@@ -1,0 +1,94 @@
+.todos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+  
+    form {
+      padding: 15px;
+      border-radius: 10px;
+      input {
+        padding: 5px;
+        margin: 0 0 1em 0;
+      }
+      button {
+        padding: 0.45em 2em;
+        margin: 0 10px;
+        border: 1px solid rgb(105, 105, 105);
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      button:hover {
+        background: rgb(215, 215, 215);
+      }
+    }
+  
+    h1 {
+      font-size: 3em;
+      color: rgb(80, 80, 80);
+    }
+    h1 span {
+      text-transform: capitalize;
+      font-size: 15px;
+    }
+  
+    .task {
+      background: rgb(239, 239, 239);
+      padding: 15px;
+      border-radius: 10px;
+      margin: 1em 0;
+      width: 60vw;
+  
+      .taskTitle {
+        font-size: 1.5em;
+        line-height: 3.2em;
+      }
+  
+      .deleteBtn,
+      .doneBtn {
+        border: none;
+        padding: 8px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .doneBtn {
+        background: #ffffff;
+        margin-left: 5px;
+      }
+      .deleteBtn {
+        background: #ffffff;
+      }
+      .doneBtn:hover {
+        background: rgb(176, 255, 176);
+      }
+      .deleteBtn:hover {
+        background: #ffcbcb;
+      }
+    }
+  
+    .doneTask {
+      display: none;
+    }
+  }
+  
+  .task.done {
+    border: 2px solid #83ff83;
+    .doneBtn {
+      display: none;
+    }
+  
+    .deleteBtn {
+      background: red;
+    }
+  
+    .doneTask {
+      display: inline;
+      background: #83ff83;
+      padding: 2px 1em;
+      margin: 0 5px;
+      border-radius: 10px;
+    }
+  }
+  
