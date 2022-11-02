@@ -1,6 +1,12 @@
 <div class="todos">
     <h1>Todo List <span><i>by Eric Maës</i></span></h1>
 
+    <!-- Formulaire d'ajout de tâche(s) -->
+    <form>
+        <input type="text" placeholder="Tâche à effectuer">
+        <button type="submit">Ajouter</button>
+    </form>
+
     <!-- Contenu des cartes des tâches -->
     <div class="task" *ngFor="let task of tasks">
         <div class="taskContent">
