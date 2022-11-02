@@ -2,17 +2,17 @@
     <h1>Todo List <span><i>by Eric Maës</i></span></h1>
 
     <!-- Formulaire d'ajout de tâche(s) -->
-    <form>
-        <input type="text" placeholder="Tâche à effectuer">
+    <form (submit)="addTask()">
+        <input type="text" name="addTasks" id="addTasks" placeholder="Tâche à effectuer" [(ngModel)]="addTasks">
         <button type="submit">Ajouter</button>
     </form>
 
     <!-- Contenu des cartes des tâches -->
-    <div class="task" *ngFor="let task of tasks">
+    <div class="task {{(task.done? 'done' : '')}}" *ngFor="let task of tasks; let i = index">
         <div class="taskContent">
             <div class="taskTitle">{{ task.title }}</div>
         </div>
-        <button type="button" class="deleteBtn">Supprimer</button>
-        <button type="button" class="doneBtn">Terminer</button>
+        <button type="button" class="deleteBtn" (click)="deleteTask(task)">Supprimer</button>
+        <button type="button" class="doneBtn" (click)="doneTask(i)">Terminer</button>
     </div>
 </div>

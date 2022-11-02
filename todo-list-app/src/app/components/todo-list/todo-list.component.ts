@@ -4,13 +4,15 @@ import { Task } from '../../models/task';
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.scss']
+  styleUrls: ['./todo-list.component.scss'],
 })
 export class TodoListComponent implements OnInit {
-
   tasks!: Task[];
 
-  constructor() { }
+  // Ajout d'une tâche
+  addTasks: string = '';
+
+  constructor() {}
 
   ngOnInit(): void {
     this.tasks = [
@@ -36,9 +38,23 @@ export class TodoListComponent implements OnInit {
   // Ajout d'une tâche
   addTask() {
     this.tasks.push({
-      title: this.addTask,
-      done: false
+      title: this.addTasks,
+      done: false,
     });
   }
 
+  // Supprimer une tâche
+  deleteTask(tasks: Task): void {
+    this.tasks = this.tasks.filter((tsk: Task) => {
+      return JSON.stringify(tasks) !== JSON.stringify(tsk);
+    });
+  }
+
+  // Mettre une tâche en "terminée"
+  doneTask(id: number) {
+    this.tasks.map((task, i) => {
+      if (i == id) task.done = !task.done;
+      return task;
+    });
+  }
 }
