@@ -2,9 +2,9 @@
     <h1>Todo List <span><i>by Eric Maës</i></span></h1>
 
     <!-- Contenu des cartes des tâches -->
-    <div class="task">
+    <div class="task" *ngFor="let task of tasks">
         <div class="taskContent">
-            <div class="taskTitle">Titre de la tâche</div>
+            <div class="taskTitle">{{ task.title }}</div>
         </div>
         <button type="button" class="deleteBtn">Supprimer</button>
         <button type="button" class="doneBtn">Terminer</button>
